@@ -1,0 +1,19 @@
+name: CryptoBeat
+description: ''
+nodes:
+- key: bitcoin_price_fetcher
+  name: BitcoinPriceFetcher
+  file_name: bitcoin_price_fetcher.py
+  starting_node: true
+  schedule: null
+- key: btc_price_comparison
+  name: BtcPriceComparison
+  file_name: btc_price_comparison.py
+  run_after:
+  - bitcoin_price_fetcher
+- key: crypto_price_alert
+  name: CryptoPriceAlert
+  file_name: crypto_price_alert.py
+  run_after:
+  - btc_price_comparison
+
