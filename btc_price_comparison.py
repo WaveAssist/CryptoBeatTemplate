@@ -5,7 +5,6 @@ waveassist.init()
 
 # Fetch current price data
 current_data = waveassist.fetch_data("current_price_data")
-print("Current Price Data:", current_data)
 
 # If current_data is None, fetch from Binance API
 if current_data is None:
@@ -21,9 +20,6 @@ if current_data is None:
 # Get current prices
 current_btc = float(current_data["BTC"]["price"])
 current_eth = float(current_data["ETH"]["price"])
-
-print("Current BTC Price:", current_btc)
-print("Current ETH Price:", current_eth)
 
 # Try to fetch previous price data
 # Fetch previous data safely
@@ -48,10 +44,6 @@ previous_eth = float(previous_data["ETH"]["price"])
 btc_change_percent = ((current_btc - previous_btc) / previous_btc * 100) if previous_btc else 0
 eth_change_percent = ((current_eth - previous_eth) / previous_eth * 100) if previous_eth else 0
 
-print("Previous BTC Price:", previous_btc)
-print("BTC Change Percent:", btc_change_percent)
-print("ETH Change Percent:", eth_change_percent)
-
 # Store results
 waveassist.store_data("price_comparison", {
     "btc_change_percent": btc_change_percent,
@@ -59,3 +51,4 @@ waveassist.store_data("price_comparison", {
     "has_previous": has_previous
 })
 waveassist.store_data("previous_price_data", current_data)
+print("Price comparison data stored successfully.")

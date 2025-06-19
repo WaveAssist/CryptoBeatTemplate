@@ -1,7 +1,7 @@
 <h1 align="center">CryptoBeat</h1>
 
 <p align="center">
-  <a href="https://waveassist.io/assistant/CryptoBeat-Template">
+  <a href="https://waveassist.io/assistant/cryptobeat-template">
     <img src="https://img.shields.io/badge/Deploy_with-WaveAssist-007F3B" alt="Deploy with WaveAssist" />
   </a>
   <a href="https://opensource.org/licenses/MIT">
@@ -23,7 +23,7 @@ CryptoBeat runs on [WaveAssist](https://waveassist.io), providing lightweight cr
 ## One-Click Deploy on WaveAssist (Recommended)
 
 <p>
-  <a href="https://waveassist.io/assistant/CryptoBeat-Template" target="_blank">
+  <a href="https://waveassist.io/assistant/cryptobeat-template" target="_blank">
     <img src="https://waveassistapps.s3.us-east-1.amazonaws.com/public/Button.png" alt="Deploy on WaveAssist" width="230" />
   </a>
 </p>
@@ -34,7 +34,7 @@ Deploy CryptoBeat instantly on [WaveAssist](https://waveassist.io).
 
 #### How to Use:
 
-1. Click the button above or go to [waveassist.io/assistant/CryptoBeat-Template](https://waveassist.io/assistant/CryptoBeat-Template)
+1. Click the button above or go to [waveassist.io/assistant/cryptobeat-template](https://waveassist.io/assistant/cryptobeat-template)
 2. Run the starting node:
    - **bitcoin_price_fetcher**: Fetches the current Bitcoin (and Ethereum) prices from CoinDesk’s API.
 3. Monitor logs and ensure alerting works as intended.
