@@ -5,7 +5,9 @@ nodes:
   name: BitcoinPriceFetcher
   file_name: bitcoin_price_fetcher.py
   starting_node: true
-  schedule: null
+  schedule:
+    cron: '30 09 * * *'  # Every day at 9:30 AM UTC
+    timezone: 'UTC'
 - key: btc_price_comparison
   name: BtcPriceComparison
   file_name: btc_price_comparison.py
