@@ -7,18 +7,35 @@ comparison_data = waveassist.fetch_data("price_comparison")
 btc_change = comparison_data["btc_change_percent"]
 eth_change = comparison_data["eth_change_percent"]
 
-should_send_email = abs(btc_change) > 0.5 or abs(eth_change) > 0.5
-
-
 current_price = waveassist.fetch_data("current_price_data")
 btc_price = current_price["BTC"]["price"]
 eth_price = current_price["ETH"]["price"]
 
-message = f"""
-⚠️ Crypto Price Alert:
+btc_color = "green" if btc_change >= 0 else "red"
+btc_sign = "+" if btc_change >= 0 else ""
 
-BTC Price: ${btc_price} | Change: {btc_change:.2f}%
-ETH Price: ${eth_price} | Change: {eth_change:.2f}%
+eth_color = "green" if eth_change >= 0 else "red"
+eth_sign = "+" if eth_change >= 0 else ""
+
+html_content = f"""
+<div style="font-family: Arial, sans-serif; padding: 12px; border: 1px solid #ffa500; background-color: #fff8e1; border-radius: 6px; max-width: 400px;">
+  <p style="margin: 0; font-size: 18px;">⚠️ <strong>Crypto Price Alert</strong></p>
+  <hr style="border: none; border-top: 1px solid #ffa500; margin: 8px 0;">
+  <p style="margin: 4px 0;">
+    <strong>BTC:</strong> ${btc_price}  
+    <span style="color: {btc_color};">
+      ({btc_sign}{btc_change:.2f}%)
+    </span>
+  </p>
+  <p style="margin: 4px 0;">
+    <strong>ETH:</strong> ${eth_price}  
+    <span style="color: {eth_color};">
+      ({eth_sign}{eth_change:.2f}%)
+    </span>
+  </p>
+</div>
 """
 
-waveassist.send_email("Crypto Price Alert 🚨", message.strip())
+
+waveassist.send_email("Crypto Price Alert 🚨",
+    html_content=html_content)
