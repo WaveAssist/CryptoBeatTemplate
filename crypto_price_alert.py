@@ -10,6 +10,8 @@ eth_change = comparison_data["eth_change_percent"]
 current_price = waveassist.fetch_data("current_price_data")
 btc_price = current_price["BTC"]["price"]
 eth_price = current_price["ETH"]["price"]
+print(f"📌 Current BTC Price: ${btc_price}")
+print(f"📌 Current ETH Price: ${eth_price}")
 
 btc_color = "green" if btc_change >= 0 else "red"
 btc_sign = "+" if btc_change >= 0 else ""
