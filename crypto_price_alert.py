@@ -20,8 +20,8 @@ eth_color = "green" if eth_change >= 0 else "red"
 eth_sign = "+" if eth_change >= 0 else ""
 
 html_content = f"""
-<div style="font-family: Arial, sans-serif; padding: 12px; border: 1px solid #ffa500; background-color: #fff8e1; border-radius: 6px; max-width: 400px;">
-  <p style="margin: 0; font-size: 18px;">⚠️ <strong>Crypto Price Alert</strong></p>
+<div style="font-family: Arial, sans-serif; padding: 12px; border: 1px solid #ffa500; background-color: #ffecb3; border-radius: 6px; max-width: 400px;">
+  <p style="margin: 0; font-size: 18px;"><strong>Crypto Price Alert</strong></p>
   <hr style="border: none; border-top: 1px solid #ffa500; margin: 8px 0;">
   <p style="margin: 4px 0;">
     <strong>BTC:</strong> ${btc_price}  
@@ -38,6 +38,5 @@ html_content = f"""
 </div>
 """
 
-
-waveassist.send_email("Crypto Price Alert 🚨",
+waveassist.send_email("Your Requested Crypto Price Update!",
     html_content=html_content)
